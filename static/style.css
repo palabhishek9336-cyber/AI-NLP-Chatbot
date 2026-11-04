@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #101827;
+    color: white;
+    height: 100vh;
+}
+
+.chat-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    background: #172337;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    color: #60a5fa;
+    margin-bottom: 30px;
+}
+
+.new-chat {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 13px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.history {
+    margin-top: 35px;
+}
+
+.history h3 {
+    color: #9ca3af;
+    margin-bottom: 20px;
+}
+
+.history p {
+    padding: 12px 5px;
+    color: #d1d5db;
+    cursor: pointer;
+}
+
+.profile {
+    margin-top: auto;
+    padding: 15px;
+    background: #24344c;
+    border-radius: 8px;
+}
+
+.main-chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #334155;
+}
+
+header span {
+    color: #22c55e;
+}
+
+.messages {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.robot {
+    font-size: 65px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.welcome {
+    text-align: center;
+}
+
+.welcome h1 {
+    color: #60a5fa;
+    margin-bottom: 12px;
+}
+
+.welcome p {
+    color: #9ca3af;
+}
+
+.bot-message {
+    background: #24344c;
+    padding: 16px 22px;
+    border-radius: 12px;
+    max-width: 80%;
+}
+
+.input-area {
+    display: flex;
+    gap: 12px;
+    background: #24344c;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.input-area input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.input-area button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    color: #64748b;
+    padding: 15px;
+    font-size: 12px;
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
+
+    .main-chat {
+        padding: 12px;
+    }
+}
