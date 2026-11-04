@@ -1,0 +1,70 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "hello",
+        "hi",
+        "hey",
+        "good morning"
+      ],
+      "responses": [
+        "Hello! How can I help you?",
+        "Hi! Welcome to my chatbot."
+      ]
+    },
+    {
+      "tag": "nlp",
+      "patterns": [
+        "what is nlp",
+        "define nlp",
+        "explain natural language processing"
+      ],
+      "responses": [
+        "NLP stands for Natural Language Processing. It helps computers understand human language."
+      ]
+    },
+    {
+      "tag": "python",
+      "patterns": [
+        "what is python",
+        "explain python",
+        "python programming"
+      ],
+      "responses": [
+        "Python is a popular programming language used in AI, machine learning and data science."
+      ]
+    },
+    {
+      "tag": "ai",
+      "patterns": [
+        "what is ai",
+        "what is artificial intelligence"
+      ],
+      "responses": [
+        "AI stands for Artificial Intelligence. It enables computers to perform intelligent tasks."
+      ]
+    },
+    {
+      "tag": "ml",
+      "patterns": [
+        "what is machine learning",
+        "explain ml"
+      ],
+      "responses": [
+        "Machine Learning allows computers to learn patterns from data."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "thank you",
+        "thanks"
+      ],
+      "responses": [
+        "You're welcome!",
+        "Happy to help!"
+      ]
+    }
+  ]
+}
