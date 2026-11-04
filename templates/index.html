@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI NLP Chatbot</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>🤖 AI NLP Chatbot</h2>
+            <p>Your Smart Assistant</p>
+        </div>
+
+        <div id="chat-box" class="chat-box">
+            <div class="bot-message">
+                Hello! Welcome to my AI chatbot.
+                How can I help you?
+            </div>
+        </div>
+
+        <div class="chat-input">
+            <input type="text" id="user-input"
+                   placeholder="Type your message...">
+
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        async function sendMessage() {
+            const input = document.getElementById("user-input");
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            const chatBox = document.getElementById("chat-box");
+
+            chatBox.innerHTML +=
+                `<div class="user-message"></div>`;
+
+            chatBox.lastElementChild.textContent = message;
+            input.value = "";
+
+            const response = await fetch("/get", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({message: message})
+            });
+
+            const data = await response.json();
+
+            const botMessage = document.createElement("div");
+            botMessage.className = "bot-message";
+            botMessage.textContent = data.response;
+
+            chatBox.appendChild(botMessage);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        document.getElementById("user-input")
+            .addEventListener("keypress", function(event) {
+                if (event.key === "Enter") sendMessage();
+            });
+    </script>
+
+</body>
+</html>
